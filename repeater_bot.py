@@ -5,7 +5,7 @@ import time
 
 # Replace 'YOUR_TOKEN' with your actual bot token
 TOKEN = '6874468807:AAF9MEISINpd_vHM-G9lhFum5IK4DJTAz6I'
-CHAT_ID = '-4059055124'  # Replace with your group chat ID
+CHAT_ID = '-1004059055124'  # Replace with your chat ID
 
 def send_repeated_message(context: CallbackContext) -> None:
     context.bot.send_message(chat_id=CHAT_ID, text="Your repeated message here.")
@@ -23,8 +23,9 @@ def main() -> None:
 
     updater.start_polling()
 
-    # Start the schedule
-    schedule.run_continuously()
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
     updater.idle()
 
