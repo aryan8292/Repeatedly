@@ -4,8 +4,8 @@ import schedule
 import time
 
 # Replace 'YOUR_TOKEN' with your actual bot token
-TOKEN = 'YOUR_TOKEN'
-CHAT_ID = 'YOUR_CHAT_ID'  # Replace with your group chat ID
+TOKEN = '6874468807:AAF9MEISINpd_vHM-G9lhFum5IK4DJTAz6I'
+CHAT_ID = '-4059055124'  # Replace with your group chat ID
 
 def send_repeated_message(context: CallbackContext) -> None:
     context.bot.send_message(chat_id=CHAT_ID, text="Your repeated message here.")
