@@ -1,25 +1,23 @@
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
-# Replace 'YOUR_TOKEN' with your actual bot token
-TOKEN = '6874468807:AAF9MEISINpd_vHM-G9lhFum5IK4DJTAz6I'
-CHAT_ID = '-1004059055124'  # Replace with your chat ID
+# Replace '6874468807:AAF9MEISINpd_vHM-G9lhFum5IK4DJTAz6I' with your actual bot token
+TOKEN = 'YOUR_TOKEN'
+CHAT_ID = '-4059055124'  # Replace with your chat ID
 
 def send_repeated_message(context: CallbackContext) -> None:
     try:
         context.bot.send_message(chat_id=CHAT_ID, text="Your repeated message here.")
     except Exception as e:
-        # Pass 'None' as the first argument for 'update'
-        error_handler(None, context, e)
+        error_handler(context, e)
 
 def start_repeated(update: Update, context: CallbackContext) -> None:
     # Schedule the message to be sent every minute
     schedule.every(1).minutes.do(send_repeated_message, context=context)
 
-def error_handler(update: Update, context: CallbackContext, error: Exception) -> None:
-    """Log errors caused by updates."""
+def error_handler(context: CallbackContext, error: Exception) -> None:
+    """Log errors."""
     context.error(f"Error: {error}")
-    # Additional error handling logic can be added here
 
 def main() -> None:
     updater = Updater(token=TOKEN)
