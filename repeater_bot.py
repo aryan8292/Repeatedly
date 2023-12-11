@@ -9,6 +9,7 @@ def send_repeated_message(context: CallbackContext) -> None:
     try:
         context.bot.send_message(chat_id=CHAT_ID, text="Your repeated message here.")
     except Exception as e:
+        # Pass 'None' as the first argument for 'update'
         error_handler(None, context, e)
 
 def start_repeated(update: Update, context: CallbackContext) -> None:
