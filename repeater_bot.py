@@ -2,8 +2,8 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Replace '6874468807:AAF9MEISINpd_vHM-G9lhFum5IK4DJTAz6I' with your actual bot token
-TOKEN = 'YOUR_TOKEN'
-CHAT_ID = '-4059055124'  # Replace with your chat ID
+TOKEN = '6874468807:AAF9MEISINpd_vHM-G9lhFum5IK4DJTAz6I'
+CHAT_ID = '-1004059055124'  # Replace with your chat ID
 
 def send_repeated_message(context: CallbackContext) -> None:
     try:
